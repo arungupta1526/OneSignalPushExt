@@ -1,0 +1,145 @@
+<div align="center">
+<h1><kbd>🧩 OneSignalPush</kbd></h1>
+An extension for MIT App Inventor 2.<br>
+OneSignal Push Notification Extension for MIT App Inventor/Kodular.<br>Made by: Arun Gupta<br><a href="https://www.telegram.me/Arungupta1526"><small><mark>Telegram</mark></small></a>
+</div>
+
+## 📝 Specifications
+* **
+📦 **Package:** com.prem.onesignalpush
+💾 **Size:** 2.60 MB
+⚙️ **Version:** 1.0
+📱 **Minimum API Level:** 16
+📅 **Updated On:** [date=2025-08-24 timezone="Asia/Calcutta"]
+🔗 **Help URL:** [Learn more](https://github.com/arungupta1526/OneSignalPushExt)
+💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v4.2.1</mark></small>
+
+## <kbd>Events:</kbd>
+**OneSignalPush** has total 5 events.
+
+### 1. InitializationSuccess
+Triggered when OneSignal is initialized successfully
+
+### 2. InitializationError
+Triggered when OneSignal initialization fails
+
+| Parameter | Type
+| - | - |
+| error | text
+
+### 3. NotificationReceived
+Triggered when a notification is received
+
+| Parameter | Type
+| - | - |
+| body | text
+| title | text
+| data | text
+
+### 4. NotificationOpened
+Triggered when a notification is opened
+
+| Parameter | Type
+| - | - |
+| body | text
+| title | text
+| data | text
+
+### 5. SubscriptionChanged
+Triggered when subscription status changes
+
+| Parameter | Type
+| - | - |
+| isSubscribed | boolean
+
+## <kbd>Methods:</kbd>
+**OneSignalPush** has total 15 methods.
+
+### 1. Initialize
+Initialize OneSignal with the provided App ID
+
+| Parameter | Type
+| - | - |
+| appId | text
+
+### 2. SetExternalUserId
+Set external user ID for the current user
+
+| Parameter | Type
+| - | - |
+| externalId | text
+
+### 3. RemoveExternalUserId
+Remove external user ID
+
+### 4. GetUserId
+Get the OneSignal User ID (Player ID)
+
+* Return type: `text`
+
+### 5. GetPushToken
+Get the device push token
+
+* Return type: `text`
+
+### 6. SendTag
+Send a tag to OneSignal for user segmentation
+
+| Parameter | Type
+| - | - |
+| key | text
+| value | text
+
+### 7. DeleteTag
+Delete a specific tag
+
+| Parameter | Type
+| - | - |
+| key | text
+
+### 8. IsSubscribed
+Check if push notifications are subscribed
+
+* Return type: `boolean`
+
+### 9. SetSubscription
+Enable or disable push notifications
+
+| Parameter | Type
+| - | - |
+| enable | boolean
+
+### 10. PromptForPush
+Prompt user for push notification permission
+
+### 11. AskForNotificationPermission
+Ask for notification permission (Android 13+)
+
+### 12. IsPermissionGranted
+Check if notification permission is granted
+
+* Return type: `boolean`
+
+### 13. GetApiVersion
+Returns the Android API version of the device.
+
+* Return type: `number`
+
+### 14. GetAndroidVersion
+Returns the Android version release (e.g., 13, 14).
+
+* Return type: `text`
+
+### 15. IsInitialized
+Check if OneSignal is initialized
+
+* Return type: `boolean`
+
+## <kbd>Getter:</kbd>
+**OneSignalPush** has total 1 getter property.
+
+### 1. AppId
+Get the current OneSignal App ID
+
+* Return type: `text`
+

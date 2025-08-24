@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.prem.onesignalpush">
+
+  <application>
+    <!-- You can use any manifest tag that goes inside the <application> tag -->
+    <!-- <service android:name="com.example.MyService"> ... </service> -->
+  </application>
+
+    <!--From Deephost one signal push permission-->
+
+    <!--    "android.permission.INTERNET",-->
+    <!--    "android.permission.ACCESS_NETWORK_STATE",-->
+    <!--    "android.permission.WAKE_LOCK",-->
+    <!--    "com.google.android.c2dm.permission.RECEIVE",-->
+    <!--    "android.permission.POST_NOTIFICATIONS",-->
+    <!--    "android.permission.INTERNET",-->
+    <!--    "com.google.android.c2dm.permission.RECEIVE",-->
+    <!--    "android.permission.VIBRATE",-->
+    <!--    "android.permission.ACCESS_NETWORK_STATE",-->
+    <!--    "android.permission.RECEIVE_BOOT_COMPLETED",-->
+    <!--    "android.permission.FOREGROUND_SERVICE"-->
+
+
+  <!-- Other than <application> level tags, you can use <uses-permission> & <queries> tags -->
+<!--   <uses-permission android:name="android.permission.INTERNET"/>-->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Android 13+ -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+<!--    <uses-permission android:name="android.permission.VIBRATE" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH" /> &lt;!&ndash; for proximity/beacon use &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Android 9+ -->
+<!--    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" /> &lt;!&ndash; for high-priority notif &ndash;&gt;-->
+<!--    -->
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+
+
+
+    <!-- ✅ Always required -->
+<!--    <uses-permission android:name="android.permission.INTERNET" /> &lt;!&ndash; All Android &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> &lt;!&ndash; All Android &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.WAKE_LOCK" /> &lt;!&ndash; All Android &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> &lt;!&ndash; All Android &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ✅ For notifications &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.VIBRATE" /> &lt;!&ndash; All Android &ndash;&gt;-->
+
+<!--    &lt;!&ndash; ✅ Android 13+ (API 33) runtime notification permission &ndash;&gt;-->
+<!--    <uses-permission-->
+<!--            android:name="android.permission.POST_NOTIFICATIONS"-->
+<!--            android:required="false"-->
+<!--            tools:targetApi="33" />-->
+
+<!--    &lt;!&ndash; ✅ Android 9+ (API 28) for running notification-related services &ndash;&gt;-->
+<!--    <uses-permission-->
+<!--            android:name="android.permission.FOREGROUND_SERVICE"-->
+<!--            android:required="false"-->
+<!--            tools:targetApi="28" />-->
+
+<!--    &lt;!&ndash; ✅ Android 10+ (API 29) – required for heads-up/full screen notifications &ndash;&gt;-->
+<!--    <uses-permission-->
+<!--            android:name="android.permission.USE_FULL_SCREEN_INTENT"-->
+<!--            android:required="false"-->
+<!--            tools:targetApi="29" />-->
+
+<!--    &lt;!&ndash; ✅ Optional: Better connectivity awareness &ndash;&gt;-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- All Android -->
+
+    <!-- ✅ Optional: Bluetooth-related (only if using proximity/beacons) -->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH" /> &lt;!&ndash; All Android &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /> &lt;!&ndash; All Android &ndash;&gt;-->
+
+    <!-- ✅ Optional: Location-based targeting (only if using location features) -->
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> &lt;!&ndash; API 1+ &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> &lt;!&ndash; API 1+ &ndash;&gt;-->
+
+
+    <!-- <queries> ... </queries> -->
+
+
+
+</manifest>
