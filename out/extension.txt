@@ -1,18 +1,18 @@
 <div align="center">
 <h1><kbd>🧩 OneSignalPush</kbd></h1>
 An extension for MIT App Inventor 2.<br>
-OneSignal Push Notification Extension for MIT App Inventor/Kodular.<br>Made by: Arun Gupta<br><a href="https://www.telegram.me/Arungupta1526"><small><mark>Telegram</mark></small></a>
+OneSignal Push Notification Extension for MIT App Inventor/Kodular.<br>Made by: Arun Gupta<br><span><a href="https://github.com/arungupta1526/OneSignalPushExt" target="_blank"><small><mark>Github</mark></small></a></span> | <span><a href="https://community.appinventor.mit.edu/t/154323" target="_blank"><small><mark>Mit AI2 Community</mark></small></a></span> | <span><a href="https://community.kodular.io/t/300697" target="_blank"><small><mark>Kodular Community</mark></small></a></span>
 </div>
 
 ## 📝 Specifications
 * **
 📦 **Package:** com.prem.onesignalpush
-💾 **Size:** 2.60 MB
+💾 **Size:** 3.04 MB
 ⚙️ **Version:** 1.0
 📱 **Minimum API Level:** 16
-📅 **Updated On:** [date=2025-08-24 timezone="Asia/Calcutta"]
-🔗 **Help URL:** [Learn more](https://github.com/arungupta1526/OneSignalPushExt)
-💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v4.2.1</mark></small>
+📅 **Updated On:** [date=2025-08-30 timezone="Asia/Calcutta"]
+🔗 **Help URL:** [Learn more](https://www.telegram.me/Arungupta1526)
+💻 **Built & documented using:** [FAST](https://community.appinventor.mit.edu/t/fast-an-efficient-way-to-build-publish-extensions/129103?u=jewel) <small><mark>v4.3.2</mark></small>
 
 ## <kbd>Events:</kbd>
 **OneSignalPush** has total 5 events.

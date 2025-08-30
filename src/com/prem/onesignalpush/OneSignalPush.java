@@ -27,12 +27,16 @@ import org.json.JSONObject;
         versionName = "1.0",
         description = "OneSignal Push Notification Extension for MIT App Inventor/Kodular.<br>" +
                 "Made by: Arun Gupta<br>" +
-        "<a href=\"https://www.telegram.me/Arungupta1526\"><small><mark>Telegram</mark></small></a>",
+                "<span><a href=\"https://github.com/arungupta1526/OneSignalPushExt\" target=\"_blank\"><small><mark>Github</mark></small></a></span> | " +
+                "<span><a href=\"https://community.appinventor.mit.edu/t/154323\" target=\"_blank\"><small><mark>Mit AI2 Community</mark></small></a></span> | " +
+                "<span><a href=\"https://community.kodular.io/t/300697\" target=\"_blank\"><small><mark>Kodular Community</mark></small></a></span>",
         nonVisible = true,
         iconName = "icon.png",
-        helpUrl = "https://github.com/arungupta1526/OneSignalPushExt"
+        helpUrl = "https://www.telegram.me/Arungupta1526"
 )
-//@SimpleObject(external = true)
+
+//<span style="background-color: yellow; font-size: smaller;">Github</span>
+// @SimpleObject(external = true)
 public class OneSignalPush extends AndroidNonvisibleComponent {
 
     private final Context context;
@@ -71,8 +75,9 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
             OneSignal.setNotificationOpenedHandler(result -> {
                 String body = result.getNotification().getBody();
                 String title = result.getNotification().getTitle();
-                String data = result.getNotification().getAdditionalData() != null ?
-                        result.getNotification().getAdditionalData().toString() : "{}";
+                String data = result.getNotification().getAdditionalData() != null
+                        ? result.getNotification().getAdditionalData().toString()
+                        : "{}";
                 NotificationOpened(body, title, data);
             });
 
@@ -80,8 +85,8 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
                 OSNotification notification = notificationReceivedEvent.getNotification();
                 String body = notification.getBody();
                 String title = notification.getTitle();
-                String data = notification.getAdditionalData() != null ?
-                        notification.getAdditionalData().toString() : "{}";
+                String data = notification.getAdditionalData() != null ? notification.getAdditionalData().toString()
+                        : "{}";
                 NotificationReceived(body, title, data);
                 notificationReceivedEvent.complete(notification);
             });
@@ -98,26 +103,30 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
 
     @SimpleFunction(description = "Set external user ID for the current user")
     public void SetExternalUserId(String externalId) {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.setExternalUserId(externalId);
     }
 
     @SimpleFunction(description = "Remove external user ID")
     public void RemoveExternalUserId() {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.removeExternalUserId();
     }
 
     @SimpleFunction(description = "Get the OneSignal User ID (Player ID)")
     public String GetUserId() {
-        if (!checkInitialized()) return "";
+        if (!checkInitialized())
+            return "";
         OSDeviceState state = OneSignal.getDeviceState();
         return state != null ? state.getUserId() : "";
     }
 
     @SimpleFunction(description = "Get the device push token")
     public String GetPushToken() {
-        if (!checkInitialized()) return "";
+        if (!checkInitialized())
+            return "";
         OSDeviceState state = OneSignal.getDeviceState();
         return state != null ? state.getPushToken() : "";
     }
@@ -126,13 +135,15 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
 
     @SimpleFunction(description = "Send a tag to OneSignal for user segmentation")
     public void SendTag(String key, String value) {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.sendTag(key, value);
     }
 
     @SimpleFunction(description = "Delete a specific tag")
     public void DeleteTag(String key) {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.deleteTag(key);
     }
 
@@ -140,14 +151,16 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
 
     @SimpleFunction(description = "Check if push notifications are subscribed")
     public boolean IsSubscribed() {
-        if (!checkInitialized()) return false;
+        if (!checkInitialized())
+            return false;
         OSDeviceState state = OneSignal.getDeviceState();
         return state != null && state.isSubscribed();
     }
 
     @SimpleFunction(description = "Enable or disable push notifications")
     public void SetSubscription(boolean enable) {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.disablePush(!enable);
         // Dispatch subscription changed event
         SubscriptionChanged(enable);
@@ -155,7 +168,8 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
 
     @SimpleFunction(description = "Prompt user for push notification permission")
     public void PromptForPush() {
-        if (!checkInitialized()) return;
+        if (!checkInitialized())
+            return;
         OneSignal.promptForPushNotifications();
     }
 
@@ -164,8 +178,8 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
     @SimpleFunction(description = "Ask for notification permission (Android 13+)")
     public void AskForNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS)
-                    != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(context,
+                    android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(activity,
                         new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, 101);
             }
@@ -183,16 +197,18 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
 
     // ===================== NOTIFICATION SENDING =====================
 
-//    @SimpleFunction(description = "Send notification to all subscribed users (API simulation)")
-//    public void SendToAllSubscribers(String apiKey, String title, String body, String largeIcon, String data) {
-//        try {
-//            // This is just a simulation - actual sending would require HTTP client
-//            // For now, we'll just trigger the success event
-//            NotificationSent();
-//        } catch (Exception e) {
-//            NotificationSendFailed(e.getMessage());
-//        }
-//    }
+    // @SimpleFunction(description = "Send notification to all subscribed users (API
+    // simulation)")
+    // public void SendToAllSubscribers(String apiKey, String title, String body,
+    // String largeIcon, String data) {
+    // try {
+    // // This is just a simulation - actual sending would require HTTP client
+    // // For now, we'll just trigger the success event
+    // NotificationSent();
+    // } catch (Exception e) {
+    // NotificationSendFailed(e.getMessage());
+    // }
+    // }
 
     // ===================== EVENTS =====================
 
@@ -216,15 +232,16 @@ public class OneSignalPush extends AndroidNonvisibleComponent {
         EventDispatcher.dispatchEvent(this, "NotificationOpened", body, title, data);
     }
 
-//    @SimpleEvent(description = "Triggered when notification is sent successfully")
-//    public void NotificationSent() {
-//        EventDispatcher.dispatchEvent(this, "NotificationSent");
-//    }
+    // @SimpleEvent(description = "Triggered when notification is sent
+    // successfully")
+    // public void NotificationSent() {
+    // EventDispatcher.dispatchEvent(this, "NotificationSent");
+    // }
 
-//    @SimpleEvent(description = "Triggered when notification sending fails")
-//    public void NotificationSendFailed(String error) {
-//        EventDispatcher.dispatchEvent(this, "NotificationSendFailed", error);
-//    }
+    // @SimpleEvent(description = "Triggered when notification sending fails")
+    // public void NotificationSendFailed(String error) {
+    // EventDispatcher.dispatchEvent(this, "NotificationSendFailed", error);
+    // }
 
     @SimpleEvent(description = "Triggered when subscription status changes")
     public void SubscriptionChanged(boolean isSubscribed) {
